@@ -1,14 +1,18 @@
 ## Overview
-This is my own take to an online markdown editor that I made using React.js and Marked.js. Still in Beta phase. 
+This is my own take to an markdown editor to help me automate writing cover letters. Made this using React.js and Marked.js. Still in Beta phase. 
 
 ## Features
-Able to add business and roles you're applying to. 
+You can add the business and role you're applying to and it'll auto populate to the letter. 
 
 
 ## Todo
 * Convert results to PDF file
+* Localstorage saving
 * Make Responsive
 * Testing
+
+## Known Bugs
+* Not able to auto populate role and jobs after editing markdown content
 
 
 ## License

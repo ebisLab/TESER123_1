@@ -3,7 +3,7 @@ import "./App.css";
 import marked from "marked";
 
 export default function App() {
-  const info = { role: "Amazing", movie: "Stranger things" };
+  const info = { role: "", movie: "" };
   const [rand, setRand] = useState(info);
   const [rand2, setRand2] = useState();
 
@@ -16,33 +16,31 @@ export default function App() {
     setText2(text);
   }, [rand, rand2, text]);
 
-  console.log("infffo", info);
 
   const [submitText, setSubmitText] = useState();
-  console.log("INFO->", info.company);
 
   const submitHandler = (e) => {
     e.preventDefault();
     setSubmitText(text2);
   };
-  console.log("RRRAAA", rand2);
 
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-      {/* <h1>rand: {rand2}</h1> */}
+      <h1>Cover Letter auto-helper</h1>
 
-      <div style={{ display: "inline-flex" }}>
+      <div>
         <div>
-          <span style={{ fontSize: "1.5em" }}>Role:</span>
+          
           <form
+          style={{display:"inline-flex"}}
+          
             onSubmit={(e) => {
               e.preventDefault();
               setRand2(rand);
-              console.log("rand2**", rand);
             }}
           >
+            <div className="space">
+            <span style={{ fontSize: "1.5em" }}>Role:</span>
             <input
               name="role"
               onChange={(e) =>
@@ -50,6 +48,9 @@ export default function App() {
               }
               value={rand.role}
             />
+            </div>
+            <div className="space">
+            <span style={{ fontSize: "1.5em" }}>Movie:</span>
             <input
               name="movie"
               onChange={(e) =>
@@ -57,8 +58,9 @@ export default function App() {
               }
               value={rand.movie}
             />
-            {console.log("RRRAAAIND", rand2)}
-            <button>go</button>
+            </div>
+
+            <button className="space">go</button>
           </form>
         </div>
       </div>
@@ -71,7 +73,6 @@ export default function App() {
                 value={text2}
                 name="role"
                 onChange={(e) => {
-                  console.log("take 2", e.target.value);
                   setText2(e.target.value);
                 }}
                 style={{
